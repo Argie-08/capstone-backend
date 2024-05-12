@@ -16,23 +16,44 @@ class OrderController extends Controller
         return response()->json($order, 200, [], JSON_PRETTY_PRINT);
     }
     function postOrder(Request $request){
-        $field = $request -> validate([
-            "item" => "required",
-            "price" => "required",
-            "quantity" => "required",
-            "total" => "required",
+        // $field = $request -> validate([
+        //     "item" => "required",
+        //     "price" => "required",
+        //     "quantity" => "required",
+        //     "total" => "required",
             
-        ]);
+        // ]);
         
-        $order = Order::create([
-            "item" => $field["item"],
-            "price" => $field["price"],
-            "quantity" => $field["quantity"],
-            "total" => $field["total"],
-            "quantity" => $field["quantity"],
-            "user_id" => auth()->user()->id,
-        ]);
+        // $order = Order::create([
+        //     "item" => $field["item"],
+        //     "price" => $field["price"],
+        //     "quantity" => $field["quantity"],
+        //     "total" => $field["total"],
+        //     "quantity" => $field["quantity"],
+            
+        // ]);
+
+        $orders = $request->input("orders");
+
+        $field = $request -> validate([
+                "*.item" => "required",
+                "*.price" => "required",
+                "*.quantity" => "required",
+                "*.total" => "required",
+                
+            ]);
+
+            Order::insert($orders);
 
         return response()->json(["message"=>"Added to Cart", "data"=>$order ], 201, [], JSON_PRETTY_PRINT);
     }
+    // function postOrders(Request $request){
+    //     $orders = $request ->input("orders");
+
+    //     foreach ($orders as $orders){
+    //         Order::create($orders);
+          
+    //     }
+    //     return response()->json(["message"=>"Multiple Added", "data"=>$orders ], 201, [], JSON_PRETTY_PRINT);
+    // }
 }

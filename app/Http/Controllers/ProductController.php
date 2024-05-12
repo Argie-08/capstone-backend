@@ -38,5 +38,26 @@ class ProductController extends Controller
 
         return response()->json(["message"=>"Data Inserted", "data"=>$product ], 201, [], JSON_PRETTY_PRINT);
     }
+    function updateProduct(Request $request){
+        $field = $request -> validate([
+            "name" => "required",
+            "category" => "required",
+            "details" => "required",
+            "price" => "required",
+            "quantity" => "required",
+            "image" => "nullable",
+            "usage" => "required"
+        ]);
+        $product->name = $field["name"];
+        $product->category = $field["category"];
+        $product->details = $field["details"];
+        $product->price = $field["price"];
+        $product->quantity = $field["quantity"];
+        $product->image = $field["image"];
+        $product->usage = $field["usage"];
+
+        return response()->json(["message"=>"Produc Updated", "data"=>$product], 200, [], JSON_PRETTY_PRINT);
+
+    }
 
 }

@@ -17,6 +17,7 @@ Route::get("/users", [UserController::class, "getUsers"]);
 
 Route::get("/products",  [ProductController::class, "getProducts"]);
 Route::get("/products/{id}",  [ProductController::class, "getProduct"]);
+Route::put("/products",  [ProductController::class, "updateProduct"]);
 Route::post("/products", [ProductController::class, "createProduct"]);
 Route::post("/upload-images", [UploadController::class, "uploadImage"]);
 Route::get("/testimonial",  [TestimonialController::class, "getTestimonials"]);
@@ -26,10 +27,12 @@ Route::get("/orders",  [OrderController::class, "getOrders"]);
 
 
 
+
 Route::group(["middleware" => ["auth:sanctum"]], function() {
     Route::post("/testimonial",  [TestimonialController::class, "createTestimonial"]);
     Route::post("/logouthere", [UserController::class, "logout"]);
-    Route::post("/orders", [OrderController::class, "postOrder"]);
+    Route::post("/order", [OrderController::class, "postOrder"]);
+    // Route::post("/orders", [OrderController::class, "postOrders"]);
     Route::get("/orders/{user_id}",  [OrderController::class, "getOrder"]);
     Route::put("/users/{id}", [UserController::class, "updateUser"]);
 });
