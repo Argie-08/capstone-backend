@@ -13,11 +13,11 @@ ENV REAL_IP_HEADER 1
 ENV APP_ENV production
 ENV APP_DEBUG false
 ENV DB_CONNECTION pgsql
-ENV DB_HOST dpg-cojmuj8cmk4c73bujd20-a
+ENV DB_HOST dpg-cp0kah21hbls73ec5u0g-a
 ENV DB_PORT 5432
-ENV DB_DATABASE blog_app_laravel
-ENV DB_USERNAME blog_app_laravel_user
-ENV DB_PASSWORD 36UkPNV02O4COGczhrus3NHXoCHRe4DE
+ENV DB_DATABASE horizone_shop
+ENV DB_USERNAME horizone_shop_user
+ENV DB_PASSWORD qKJgy4mnoJHVbaLcPg6ooD95CREPMVFc
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1

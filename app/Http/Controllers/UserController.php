@@ -45,6 +45,7 @@ class UserController extends Controller
         ]);
 
         $user = User::where("username", $field["username"])->first(); 
+        // $password = User::where("password", $field["password"])->first(); 
 
         if (!$user){
             return response()->json([

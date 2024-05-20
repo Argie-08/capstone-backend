@@ -7,17 +7,23 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AdminController;
+
 
 
 Route::post("/registered", [UserController::class, "register"]);
 Route::post("/loginhere", [UserController::class, "login"]);
+
+Route::post("/admin/register", [AdminController::class, "adminRegister"]);
+Route::post("/admin/logIn", [AdminController::class, "adminLogIn"]);
 
 Route::get("/users/{id}", [UserController::class, "getUser"]);
 Route::get("/users", [UserController::class, "getUsers"]);
 
 Route::get("/products",  [ProductController::class, "getProducts"]);
 Route::get("/products/{id}",  [ProductController::class, "getProduct"]);
-Route::put("/products",  [ProductController::class, "updateProduct"]);
+Route::put("/product/{id}",  [ProductController::class, "updateProduct"]);
+Route::delete("/product/{id}",  [ProductController::class, "deleteProduct"]);
 Route::post("/products", [ProductController::class, "createProduct"]);
 Route::post("/upload-images", [UploadController::class, "uploadImage"]);
 Route::get("/testimonial",  [TestimonialController::class, "getTestimonials"]);
