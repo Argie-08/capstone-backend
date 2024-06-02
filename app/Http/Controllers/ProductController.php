@@ -54,6 +54,7 @@ class ProductController extends Controller
             "price" => "required",
             "quantity" => "required",
             "usage" => "required"
+            
         ]);
         $product->name = $field["name"];
         $product->category = $field["category"];
