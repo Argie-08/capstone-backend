@@ -11,7 +11,7 @@ class UploadController extends Controller
     function uploadImage(Request $request){
 
         $field = $request -> validate([     
-            "image.*" => "required | image | mimes:png,jpg,jpeg",
+            "image" => "required | image | mimes:png,jpg,jpeg",
         ]);
 
         $image_name = time(). "." . $request->image->extension();
