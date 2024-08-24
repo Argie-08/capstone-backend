@@ -13,11 +13,11 @@ ENV REAL_IP_HEADER 1
 ENV APP_ENV production
 ENV APP_DEBUG false
 ENV DB_CONNECTION pgsql
-ENV DB_HOST dpg-cp0kah21hbls73ec5u0g-a
+ENV DB_HOST dpg-cr4t66o8fa8c73a7hgb0-a
 ENV DB_PORT 5432
-ENV DB_DATABASE horizone_shop
-ENV DB_USERNAME horizone_shop_user
-ENV DB_PASSWORD qKJgy4mnoJHVbaLcPg6ooD95CREPMVFc
+ENV DB_DATABASE horizonedb
+ENV DB_USERNAME horizoneuser
+ENV DB_PASSWORD r2ugth9JfkPjL2ZYT8gJjpEWbU9eqvOy
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1

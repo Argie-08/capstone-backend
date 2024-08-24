@@ -19,3 +19,4 @@ class UploadController extends Controller
         return response()->json(["image"=>$image_name], 201, [], JSON_PRETTY_PRINT);
     }
 }
+    
